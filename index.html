@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>yizhi · CTA Path A</title>
+  <meta name="description" content="中国商品期货 CTA 路径A 纸面验证档案可视化" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="hero">
+    <nav class="nav">
+      <a class="brand" href="./">yizhi</a>
+      <div class="nav-links">
+        <a href="https://github.com/12poing-a11y/cta-path-a">策略仓</a>
+        <a href="https://github.com/12poing-a11y">GitHub</a>
+      </div>
+    </nav>
+
+    <div class="hero-copy">
+      <p class="kicker">Research Desk · Path A</p>
+      <h1>yizhi</h1>
+      <p class="lede">中国商品期货 CTA 路径A：同向动量过滤 + ATR 风险平价，纸面记账、规则先于下单。</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#board">查看信号板</a>
+        <a class="btn ghost" href="https://github.com/12poing-a11y/cta-path-a">打开 cta-path-a</a>
+      </div>
+    </div>
+
+    <div class="hero-orbit" aria-hidden="true">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="pulse"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="params" id="params">
+      <h2>验证参数</h2>
+      <p class="section-note">固定规则，日线级别；路径A不下单。</p>
+      <div class="param-strip" id="paramStrip"></div>
+    </section>
+
+    <section class="board" id="board">
+      <div class="section-head">
+        <h2>信号板</h2>
+        <p class="asof" id="asofLabel">—</p>
+      </div>
+      <div class="board-grid" id="signalBoard"></div>
+    </section>
+
+    <section class="flow" id="flow">
+      <h2>流水线</h2>
+      <p class="section-note">GitHub Actions 定时；后续接入 OBS / Grokbot。</p>
+      <ol class="pipeline">
+        <li><span>01</span><strong>iFinD</strong><em>主力行情 · ATR</em></li>
+        <li><span>02</span><strong>信号</strong><em>20D × 60D 同向</em></li>
+        <li><span>03</span><strong>仓位</strong><em>风险预算 ÷ 每手风险</em></li>
+        <li><span>04</span><strong>台账</strong><em>Notion · archive</em></li>
+        <li class="soon"><span>05</span><strong>OBS</strong><em>云电脑 vault 待接</em></li>
+      </ol>
+    </section>
+
+    <section class="roadmap" id="roadmap">
+      <h2>下一步</h2>
+      <ul>
+        <li>OBS：Grokbot 云电脑 vault 接入后，日信号落到笔记库</li>
+        <li>可视化：周回测权益曲线接入本页</li>
+        <li>合并：与 Grokbot 共用品种池与台账接口</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>研究用途，不构成投资建议。密钥不入库。</p>
+    <p><a href="https://github.com/12poing-a11y">github.com/12poing-a11y</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
